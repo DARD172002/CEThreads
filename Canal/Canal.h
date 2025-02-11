@@ -1,6 +1,6 @@
 #ifndef CANAL_H
 #define CANAL_H
-
+#include <uncontext.h>
 
 typedef enum {
     DERECHA,
