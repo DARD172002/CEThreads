@@ -3,11 +3,17 @@
 #define CETHREAD_H
 
 #include <ucontext.h>
+#include <stdatomic.h>
+
 //Prototype
 
 
 
 #define PTHREAD_STACK_SIZE 500
+
+typedef struct{
+   atomic_int locked; 
+}CEmutex;
 
 
 
@@ -34,9 +40,20 @@ typedef struct {
 } CEThread;
 
 
-//int CEThread_create(CEThread *thread, const CEThread_att_t  *tattr, void * (*start_routine)(void *) ,void *arg);
-
-
 int CEThread_create(CEThread *thread, void * (*start_routine)(void *) ,void *arg);
+
+
+void  CEThread_end(void *retval);
+
+
+int CEThread_join(CEThread thread);
+
+
+
+void CEmutex_init(CEmutex *mutext);
+
+void CEmutex_destroy();
+
+void CEmutex_unlock(CEmutex *mutext);
 
 #endif

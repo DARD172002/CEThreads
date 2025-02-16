@@ -10,7 +10,7 @@ void *thread_fuction(void *number){
 int main(){
     CEThread thread;
     int number=9;
-    CEThread_create(&thread,&thread_fuction,&number);
+    CEThread_create(&thread,&thread_fuction,NULL);
     printf("todo bien de verdad");
     return 0;
 }
