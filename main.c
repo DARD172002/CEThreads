@@ -1,16 +1,16 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "library/CEThreads.h"
 
 
-void *thread_fuction(void *number){
-    printf("the number is %d \n", *(int *)number);
-    return NULL;
+
+
+int sum(int a, int b){
+    int result=a+b;
+    return result;
 }
 int main(){
-    CEThread thread;
-    int number=9;
-    CEThread_create(&thread,&thread_fuction,NULL);
-    printf("todo bien de verdad");
+    int a=4;
+    int b=5;
+    printf("el resultado es  %d now", sum(a,b));
     return 0;
 }
