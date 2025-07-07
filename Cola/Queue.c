@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "Queue.h"
 
-void agregar(int data, Queue *queue){
+void agregar(void *data,Queue *queue){
 //create a new node
  Node *newNode= malloc(sizeof(Node));
  //data fulling the data node
@@ -28,25 +28,38 @@ void agregar(int data, Queue *queue){
  }
 }}
 
-
+Node *get_firt_node(Queue *queue){
+    return  queue->head;
+}
 void imprimir(Queue *queue){
     Node *aux=queue->head;
     while(aux!=NULL){
-        printf(" \n valor %d", aux->data);
+        printf(" \n valor %p",aux->data);
         aux=aux->next;
     }
 }
 
-int main(){
+/*int main(){
     
     Queue queue;
     queue.head=NULL;
-    agregar(5,&queue);
-    agregar(7,&queue);
-    agregar(9,&queue);
-    imprimir(&queue);
+    Barco barco1;
+    Barco barco2;
+    Barco barco3;
+    barco1.id=1;
+    barco2.id=2;
+    barco3.id=3;
+    agregar((void *)&barco1,&queue);
+    agregar((void*)&barco2,&queue);
+    agregar((void *)&barco3,&queue);
+    //imprimir(&queue);
+    Node *aux=get_firt_node(&queue);
+
+    //(Barco *)aux->data;
+    printf("this the id %d",((Barco *)aux->data)->id);
+
 
     return 0;
-}
+}*/
 
 

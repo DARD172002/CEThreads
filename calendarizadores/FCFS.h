@@ -2,6 +2,6 @@
 #define FCFS_H
 
 
-void FCFS();
+
 
 #endif

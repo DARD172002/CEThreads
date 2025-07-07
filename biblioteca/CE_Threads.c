@@ -24,7 +24,14 @@ int CE_Thread_create(CE_Thread *thread,void (*func)(void *), void *arg){
     thread->context.uc_stack.ss_flags = 0;
     thread->context.uc_link = NULL; 
     makecontext(&thread->context,(void(*)())CE_Thread_start_wrapper,1,thread);
-    
+    return thread->id;
+} 
+
+
+void CE_Thread_join(CE_Thread thread){
+    while(thread.state!=TERMINATED){
+        
+    }
 }
 
 

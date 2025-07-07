@@ -24,5 +24,5 @@ typedef struct  {
 
 int CE_Thread_create(CE_Thread *thread,void (*func)(void *), void *arg);
 void CE_Thread_start_wrapper(CE_Thread *thread);
-
+void CE_Thread_join();
 #endif

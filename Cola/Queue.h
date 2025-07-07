@@ -2,9 +2,13 @@
 #define QUEUE_H
 
 typedef struct Node Node;
+typedef struct {
+    char name[10];
+    int id;
+} Barco;
 struct Node {
     Node *next;
-    int data;
+    void *data;
 };
 
 typedef struct {
@@ -12,7 +16,8 @@ typedef struct {
 }Queue;
 
 
-void agregar(int data, Queue *queue);
+void agregar( void *data, Queue *queue);
 void imprimir(Queue *queue);
+Node *get_firt_node(Queue *queue);
 
 #endif 
